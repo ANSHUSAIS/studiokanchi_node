@@ -3,71 +3,68 @@ const validator = require("validator");
 
 
 const productScheema = new mongoose.Schema({
-    name : {
-        type : String,
-        required : [true, "This field is required..."],
+    name: {
+        type: String,
+        required: [true, "This field is required..."],
     },
-    category : {
+    category: {
         type: mongoose.Schema.ObjectId,
-        required : [true, "This field is required..."],
+        required: [true, "This field is required..."],
         ref: 'category'
     },
-    subcategory : {
+    subcategory: {
         type: mongoose.Schema.ObjectId,
-        required : [true, "This field is required..."],
+        required: [true, "This field is required..."],
         ref: 'subcategory'
     },
-    brand : {
+    brand: {
         type: String
     },
-    price : {
+    price: {
         type: Number,
     },
-    splprice : {
-        type: Number,
-        required : [true, "This field is required..."],
+    splprice: {
+        type: Number
     },
-    quantity : {
+    quantity: {
         type: String
     },
-    status : {
+    status: {
         type: String,
-        default : 'active'
+        default: 'active'
     },
-    short_description : {
+    short_description: {
         type: String,
-        required : [true, "This field is required..."],
+        required: [true, "This field is required..."],
     },
-    long_description : {
+    long_description: {
         type: String,
-        required : [true, "This field is required..."],
+        required: [true, "This field is required..."],
     },
-    attributes : {
+    attributes: {
         type: String,
     },
-    photo : {
-        id : {
-            type : String,
+    photo: {
+        id: {
+            type: String,
         },
-        secure_url : {
-            type : String,
-            required : [true, "Image field is required..."],
+        secure_url: {
+            type: String,
+            required: [true, "Image field is required..."],
         }
     },
-    photos : [
-        {
-            id : {
-                type : String,
-            },
-            secure_url : {
-                type : String,
-                required : [true, "Image field is required..."],
-            }
+    photos: [{
+        id: {
+            type: String,
+        },
+        secure_url: {
+            type: String,
+            required: [true, "Image field is required..."],
         }
-    ],
-    createdAt : {
-        type : Date,
-        default : Date.now()
+    }],
+    createdAt: {
+        type: Date,
+        default: Date.now()
     }
 })
 
