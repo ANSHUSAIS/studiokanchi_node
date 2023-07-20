@@ -385,8 +385,10 @@ exports.getAllProductsByCategory = async(req, res, next) => {
                 }
             }
         ];
-
-        arg = attr.concat(subcat, splprice, arg); // Concating all the queries...
+        sort = {
+            $sort: { _id: -1 }
+        };
+        arg = attr.concat(subcat, splprice, arg,sort); // Concating all the queries...
 
         // Pagination
         let page = 1;
